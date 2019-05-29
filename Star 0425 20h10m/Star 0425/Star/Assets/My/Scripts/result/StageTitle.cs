@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class nameCon : MonoBehaviour
+public class StageTitle : MonoBehaviour
 {
     public Sprite[] sprites;
 
@@ -21,6 +21,6 @@ public class nameCon : MonoBehaviour
     void Update()
     {
         img.sprite = sprites[SelectStage.StageSelectNumber - 1];
-        imgRect.sizeDelta = new Vector2(sprites[SelectStage.StageSelectNumber - 1].bounds.size.x * 100, 75f);   
+        imgRect.sizeDelta = new Vector2(sprites[SelectStage.StageSelectNumber - 1].bounds.size.x * 100, 75f);
     }
 }
