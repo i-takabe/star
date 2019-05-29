@@ -17,6 +17,8 @@ public class VolumeControl1 : MonoBehaviour
     {
         gameGenerator = GameObject.Find("GameGenerator");
         crescendoVolumeNumber = 0.01f;
+        for (int i = 0; i < musicStep.Length; i++)
+            musicStep[i].Play();
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class VolumeControl1 : MonoBehaviour
             for (int i = 0; i < musicCount + 1; i++)
                 if (pauseMusicStep[i].volume < 0.3f)
                     pauseMusicStep[i].volume = 0.3f;
-            for (int i = musicCount + 1; i < musicStep.Length; i++)
+            for (int i = musicCount + 1; i < pauseMusicStep.Length; i++)
                 pauseMusicStep[i].volume = 0;
         }
         else
