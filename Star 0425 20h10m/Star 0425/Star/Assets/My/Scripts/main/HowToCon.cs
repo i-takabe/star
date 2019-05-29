@@ -10,6 +10,21 @@ public class HowToCon : MonoBehaviour
 
     private GameObject HTobj;
     private int selsectNum = 0;
+    HowtoController flick = new HowtoController();
+
+    private void Update()
+    {
+        flick.Flicker();
+        if (flick.flickDirection == (int)HowtoController.direction.right)
+        {
+            changeRightHT();
+        }
+        if (flick.flickDirection == (int)HowtoController.direction.left)
+        {
+            changeLeftHT();
+        }
+        flick.flickDirection = (int)HowtoController.direction.none;
+    }
 
     public void StartHowTo()
     {
@@ -47,4 +62,6 @@ public class HowToCon : MonoBehaviour
         HTobj = Instantiate(HTpre[selsectNum], howTo.transform);
         HTobj.transform.SetSiblingIndex(2);
     }
+
+
 }

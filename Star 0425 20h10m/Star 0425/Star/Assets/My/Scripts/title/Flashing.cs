@@ -37,43 +37,29 @@ public class Flashing : MonoBehaviour
         color.a = GetAlphaColor(color.a);
         image.color = color;
 
-        if (Application.isEditor)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                loadFlag = true;
-               GetTitleSe();
-            }
+            loadFlag = true;
+            GetTitleSe();
         }
-        else
-        {
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
 
-                if (touch.phase == TouchPhase.Began)
-                {
-                    loadFlag = true;
-                }
-            }
-        }
 
         if (loadFlag)
         {
             speed = 5.0f;          
             timer++;
 
-            if(timer > 180 && color.a >= 0.95)
+            if (timer > 60 && color.a >= 0.95)
             {
                 speed = 0;
-            }
-            if (timer > 210)
-            {
-                Destroy(startUI);
-                menuUI.SetActive(true);
-                timer = 0;
-                speed = 1;
-                loadFlag = false;
+                if (!audioSource.isPlaying)
+                {
+                    Destroy(startUI);
+                    menuUI.SetActive(true);
+                    timer = 0;
+                    speed = 1;
+                    loadFlag = false;
+                }
             }
         }
     }
@@ -88,5 +74,6 @@ public class Flashing : MonoBehaviour
     private void GetTitleSe()
     {
         audioSource.PlayOneShot(audioSource.clip);
+    
     }
 }

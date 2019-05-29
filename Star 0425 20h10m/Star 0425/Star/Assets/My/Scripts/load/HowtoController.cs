@@ -31,7 +31,7 @@ public class HowtoController : MonoBehaviour
     Vector3 startTPos;
     Vector3 endTPos;
 
-    float flickRange = 300f;
+    float flickRange = 200f;
 
     // Start is called before the first frame update
     void Start()
