@@ -30,9 +30,7 @@ public class pauseController : MonoBehaviour
         pauseUI.SetActive(false);
         mainUI.SetActive(true);
         Time.timeScale = 1f;
-        Debug.Log("ゲームに戻ったよ");
         volumeControl.pauseSwich = false;
-        Debug.Log(volumeControl.pauseSwich);
         for (int i = 0; i < volumeControl.pauseMusicStep.Length; i++)
         {
             volumeControl.pauseMusicStep[i].volume = 0;
