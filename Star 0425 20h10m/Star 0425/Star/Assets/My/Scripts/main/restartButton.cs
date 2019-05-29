@@ -30,5 +30,11 @@ public class restartButton : MonoBehaviour
         Time.timeScale = 1.0f;
         Resources.UnloadUnusedAssets();//一回全部消し飛ばすやつ　by亀
         SceneManager.LoadScene("LoadScene");
-    } 
+    }
+
+    public void loadTitle()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("SelectScene");
+    }
 }
