@@ -37,7 +37,7 @@ public class Flashing : MonoBehaviour
         color.a = GetAlphaColor(color.a);
         image.color = color;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !loadFlag)
         {
             loadFlag = true;
             GetTitleSe();
