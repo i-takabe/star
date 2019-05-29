@@ -10,20 +10,24 @@ public class HowToCon : MonoBehaviour
 
     private GameObject HTobj;
     private int selsectNum = 0;
+    private bool flicKOK = false;
     HowtoController flick = new HowtoController();
 
     private void Update()
     {
-        flick.Flicker();
-        if (flick.flickDirection == (int)HowtoController.direction.right)
+        if (!flicKOK)
         {
-            changeRightHT();
+            flick.Flicker();
+            if (flick.flickDirection == (int)HowtoController.direction.right)
+            {
+                changeRightHT();
+            }
+            if (flick.flickDirection == (int)HowtoController.direction.left)
+            {
+                changeLeftHT();
+            }
+            flick.flickDirection = (int)HowtoController.direction.none;
         }
-        if (flick.flickDirection == (int)HowtoController.direction.left)
-        {
-            changeLeftHT();
-        }
-        flick.flickDirection = (int)HowtoController.direction.none;
     }
 
     public void StartHowTo()
@@ -32,12 +36,14 @@ public class HowToCon : MonoBehaviour
         other.SetActive(false);
         HTobj = Instantiate(HTpre[0], howTo.transform);
         HTobj.transform.SetSiblingIndex(2);
+        flicKOK = true;
     }
     public void endHowTo()
     {
         Destroy(HTobj);
         howTo.SetActive(false);
         other.SetActive(true);
+        flicKOK = false;
     }
 
     public void changeRightHT()

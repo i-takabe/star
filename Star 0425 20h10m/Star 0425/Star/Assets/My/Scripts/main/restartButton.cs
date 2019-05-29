@@ -35,6 +35,6 @@ public class restartButton : MonoBehaviour
     public void loadTitle()
     {
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("SelectScene");
+        SceneManager.LoadScene("TitleScene");
     }
 }
