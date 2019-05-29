@@ -28,6 +28,14 @@ public class RankingSelect : MonoBehaviour
             SelectStage.StageSelectNumber = (int)SelectStage.Stage.Hard;
         }
     }
+    public void Stage1()
+    {
+        SelectStage.StageSelectNumber--;
+    }
+    public void Stage2()
+    {
+        SelectStage.StageSelectNumber++;
+    }
     void Update()
     {
         if (SelectStage.StageSelectNumber % 2 == 0)
