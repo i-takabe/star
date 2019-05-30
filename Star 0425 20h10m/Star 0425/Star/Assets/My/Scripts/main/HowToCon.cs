@@ -15,7 +15,7 @@ public class HowToCon : MonoBehaviour
 
     private void Update()
     {
-        if (!flicKOK)
+        if (howTo.activeSelf)
         {
             flick.Flicker();
             if (flick.flickDirection == (int)HowtoController.direction.right)
@@ -43,6 +43,7 @@ public class HowToCon : MonoBehaviour
         Destroy(HTobj);
         howTo.SetActive(false);
         other.SetActive(true);
+        selsectNum = 0;
         flicKOK = false;
     }
 
