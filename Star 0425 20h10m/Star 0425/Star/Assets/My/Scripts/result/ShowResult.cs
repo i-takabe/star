@@ -58,7 +58,7 @@ public class ShowResult : MonoBehaviour
         if (timer < star && !skipNow)
         {
             resultStar.text = timer.ToString() + " stars";
-            timer += star / (60 * 3);
+            timer += star / (60 * 3) + 1;
         }
         else
         {
@@ -66,7 +66,6 @@ public class ShowResult : MonoBehaviour
             starCountEnd = true;
             timer = 0;
         }
-
     }
     private void ShowTime()
     {
@@ -81,5 +80,4 @@ public class ShowResult : MonoBehaviour
             timeCountEnd = true;
         }
     }
-
 }
