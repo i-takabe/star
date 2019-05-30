@@ -14,20 +14,19 @@ public class OptionCon : MonoBehaviour
     [SerializeField]
     private Image imgY;
 
-    private Vector2 xy = new Vector2(1,1);
-    private int x = 1;
-    private int y = 1;
+    private static float x = 1;
+    private static float y = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(x == 1)
+        if(y == 1)
         {
             imgX.sprite = sprites[0];
         }
@@ -36,7 +35,7 @@ public class OptionCon : MonoBehaviour
             imgX.sprite = sprites[1];
         }
 
-        if (y == 1)
+        if (x == 1)
         {
             imgY.sprite = sprites[2];
         }
@@ -46,25 +45,25 @@ public class OptionCon : MonoBehaviour
         }
     }
 
-    public void changeAngleX()
-    {
-        x *= -1;
-        PlayerMove.PM = new Vector2(x,y);
-    }
-
-    public void changeAngleY()
+    public void ChangeAngleX()
     {
         y *= -1;
         PlayerMove.PM = new Vector2(x, y);
     }
 
-    public void openOption()
+    public void ChangeAngleY()
+    {
+        x *= -1;
+        PlayerMove.PM = new Vector2(x, y);
+    }
+
+    public void OpenOption()
     {
         OpCan.SetActive(true);
         otherCan.SetActive(false);
     }
 
-    public void closeOption()
+    public void CloseOption()
     {
         OpCan.SetActive(false);
         otherCan.SetActive(true);
