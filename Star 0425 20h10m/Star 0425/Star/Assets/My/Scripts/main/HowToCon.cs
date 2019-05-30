@@ -10,7 +10,7 @@ public class HowToCon : MonoBehaviour
 
     private GameObject HTobj;
     private int selsectNum = 0;
-    private bool flicKOK = false;
+    private bool fFlag = false;
     HowtoController flick = new HowtoController();
 
     private void Update()
@@ -32,19 +32,19 @@ public class HowToCon : MonoBehaviour
 
     public void StartHowTo()
     {
+        //selsectNum = 0;
         howTo.SetActive(true);
         other.SetActive(false);
         HTobj = Instantiate(HTpre[0], howTo.transform);
         HTobj.transform.SetSiblingIndex(2);
-        flicKOK = true;
+        fFlag = true;
     }
     public void endHowTo()
     {
         Destroy(HTobj);
         howTo.SetActive(false);
         other.SetActive(true);
-        selsectNum = 0;
-        flicKOK = false;
+        fFlag = false;
     }
 
     public void changeRightHT()

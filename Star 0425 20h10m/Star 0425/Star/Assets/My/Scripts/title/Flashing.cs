@@ -49,7 +49,7 @@ public class Flashing : MonoBehaviour
             speed = 5.0f;          
             timer++;
 
-            if (timer > 90 && color.a >= 0.95)
+            if (timer > 100 && color.a >= 0.95)
             {
                 speed = 0;
                 if (!audioSource.isPlaying)
