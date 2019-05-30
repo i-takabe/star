@@ -7,7 +7,8 @@ public class restartButton : MonoBehaviour
 {
     public GameObject dialog;
     public GameObject backB;
-
+    public GameObject bgm;
+    private GameObject setBgm;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,8 @@ public class restartButton : MonoBehaviour
     public void loadTitle()
     {
         Time.timeScale = 1.0f;
+        setBgm = Instantiate(bgm, Vector3.zero, Quaternion.identity);
+        setBgm.name = "BGM";
         SceneManager.LoadScene("SelectScene");
     }
 }

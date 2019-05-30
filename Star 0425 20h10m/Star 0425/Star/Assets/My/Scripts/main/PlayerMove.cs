@@ -140,7 +140,9 @@ public class PlayerMove : MonoBehaviour
         else
             pm.y = -1;
 
-        pm *= PM;
+        pm.x *= PM.x;
+        pm.y *= PM.y;
+        //pm *= PM;
 
         accelerationCount.x = (int)(Mathf.Abs(gyro.x) / (gyroLimit.x / maxAcceleration.x));
         if (gyro.y > defPosY)

@@ -21,7 +21,7 @@ public class Ranking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Goal.ClearFlag && !onece)
+        if (TotalScore.IsClear && !onece)
         {
             stock = score.ScoreSet();
             for (int i = 1; i <= maxRank; i++)

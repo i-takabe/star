@@ -11,11 +11,28 @@ public class TotalScore : MonoBehaviour
     {
         get; set;
     }
+    private int
+        stockTotal,
+        hundred,
+        thousand,
+        million;
+    private const int
+        oneMillion = 1000000,
+        oneThousand = 1000;
     public void ShowTotalScore(Text ScoreText)
     {
         if (IsClear == true)
         {
-            ScoreText.text = ScoreSet().ToString();
+            stockTotal = ScoreSet();
+            million = stockTotal / oneMillion;
+            thousand = (stockTotal - million * oneMillion) / oneThousand;
+            hundred = stockTotal - (million * oneMillion + thousand * oneThousand);
+            if (stockTotal >= oneMillion)
+                ScoreText.text = million + "," + thousand.ToString("d3") + "," + hundred.ToString("d3");
+            else if(stockTotal >= oneThousand)
+                ScoreText.text = thousand + "," + hundred.ToString("d3");
+            else
+                ScoreText.text = hundred.ToString();
         }
         else
         {
