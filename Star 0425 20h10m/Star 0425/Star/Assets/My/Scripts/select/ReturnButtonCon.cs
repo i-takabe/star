@@ -15,8 +15,6 @@ public class ReturnButtonCon : MonoBehaviour
     }
     public void retrunT()
     {
-        titleBGM.GetComponent<ButtonDontDestroy>().DestroyThisObject();
-        button.GetComponent<ButtonDontDestroy>().DestroyThisObject();
         Invoke("loadT", 0.5f);
     }
     private void loadT()
