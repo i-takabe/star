@@ -9,7 +9,6 @@ public class returnTitle : MonoBehaviour
     private GameObject 
         button,
         bgm;
-    public GameObject bgmTitle;
     private void Start()
     {
         stock = SelectStage.StageSelectNumber;
@@ -19,10 +18,9 @@ public class returnTitle : MonoBehaviour
     public void ReturnTitle()
     {
         Time.timeScale = 1f;
-        //button.GetComponent<ButtonDontDestroy>().DestroyThisObject();
+        button.GetComponent<ButtonDontDestroy>().DestroyThisObject();
         bgm.GetComponent<ButtonDontDestroy>().DestroyThisObject();
-        Instantiate(bgmTitle, Vector3.zero, Quaternion.identity);
-        SceneManager.LoadScene("SelectScene");
+        SceneManager.LoadScene("TitleScene");
     }
 
     public void Retry()
